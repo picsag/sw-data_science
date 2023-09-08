@@ -26,7 +26,7 @@ class FlightDataPreparator:
         df = pd.read_pickle(self.processed_file)
 
         # Split data, while preserving date order with shuffle=False
-        self.train_df, self.test_df = train_test_split(df, test_size=test_size, shuffle=False)
+        self.train_df, self.test_df = train_test_split(df, test_size=test_size, shuffle=True)
 
         # Save prepared data (both train and test) to a pickle file
         with open(self.prepared_file, 'wb') as f:
